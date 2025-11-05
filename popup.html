@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Prompt Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Prompt Manager</h1>
+      <p class="subtitle">Organize and manage your prompts</p>
+    </header>
+
+    <div class="add-prompt-section">
+      <input 
+        type="text" 
+        id="promptTitle" 
+        placeholder="Prompt title..." 
+        class="input-field"
+        maxlength="100"
+      />
+      <textarea 
+        id="promptText" 
+        placeholder="Enter your prompt here..." 
+        class="input-field textarea-field"
+        rows="4"
+      ></textarea>
+      <button id="addPromptBtn" class="btn btn-primary">
+        <span class="btn-icon">+</span>
+        Add Prompt
+      </button>
+    </div>
+
+    <div class="prompts-list" id="promptsList">
+      <div class="empty-state" id="emptyState">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+          <path d="M32 20V44M20 32H44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <p>No prompts yet</p>
+        <p class="empty-subtitle">Add your first prompt to get started</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <span id="toastMessage"></span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

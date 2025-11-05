@@ -1,3 +1,6 @@
+// Constants
+const ANIMATION_DURATION = 300; // milliseconds - matches CSS animation duration
+
 // DOM elements
 const promptTitleInput = document.getElementById('promptTitle');
 const promptTextInput = document.getElementById('promptText');
@@ -76,7 +79,7 @@ async function addPrompt() {
     const prompts = result.prompts || [];
     
     const newPrompt = {
-      id: Date.now().toString(),
+      id: crypto.randomUUID(),
       title,
       text,
       createdAt: new Date().toISOString()
@@ -111,7 +114,7 @@ async function deletePrompt(promptId) {
       card.classList.add('deleting');
       
       // Wait for animation to complete before removing
-      await new Promise(resolve => setTimeout(resolve, 300));
+      await new Promise(resolve => setTimeout(resolve, ANIMATION_DURATION));
     }
     
     const updatedPrompts = prompts.filter(p => p.id !== promptId);

@@ -1,3 +1,7 @@
+:root {
+  --animation-duration: 0.3s;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -300,7 +304,7 @@ h1 {
 }
 
 .prompt-card.deleting {
-  animation: slideOut 0.3s ease forwards;
+  animation: slideOut var(--animation-duration) ease forwards;
 }
 
 @keyframes slideOut {
